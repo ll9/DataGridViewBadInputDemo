@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridError.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace DataGridError
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void someModelDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            someModelDataGridView[e.ColumnIndex, e.RowIndex].Value = string.Empty;
         }
     }
 }
